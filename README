@@ -1,0 +1,33 @@
+Microsoft Learn Course: Build and run a web application with the MEAN stack on an Azure Linux virtual machine
+FIXED 2025
+- When I was following the course I found out that some steps were outdated, some of them were MongoDB version and the code used in the webApp.
+  A friend completed it using other DB instead of MongoDB, but I found the errors and made it work with mongoDB.
+
+1.- MondoDB version
+
+    By folllowing the course you will get a 3.x version and when trying to execute the webApp you will get a error. You can solve it installing a
+    4.x version.
+
+    Paste this in Bash or PowerShell to install a 4.x version of mongDB:
+
+    wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+    echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+    sudo apt-get update
+
+    Then install it with this command:
+
+    sudo apt-get install -y mongodb-org
+
+    Start it with this command:
+
+    sudo systemctl start mongod
+    sudo systemctl enable mongod
+
+    So now with that you won't get MongoDB errors.
+
+2.- Code
+
+    Instead of using the code provided in the course, use the one in this repository. It is a corrected version, some lines are no longer necessary for new versions of node.js and mongoDB.
+
+That's all enjoy, enjoy your learning!
+
